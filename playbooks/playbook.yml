@@ -2,8 +2,8 @@
   connection: local
   vars:
     resource_group: moim-test-ansible
-    webapp_name: myfirstWebApp
-    plan_name: myAppServicePlan
+    webapp_name: app-moim-test2020
+    plan_name: asp-moim-test2020
     location: eastus
   tasks:
     - name: Create a resource group
