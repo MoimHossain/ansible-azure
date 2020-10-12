@@ -1,0 +1,6 @@
+pool:
+  name: Azure Pipelines
+steps:
+- bash: 'docker run --rm -e ''AZURE_CLIENT_ID=$(cid)'' -e ''AZURE_SECRET=$(cs)'' -e ''AZURE_SUBSCRIPTION_ID=$(sid)'' -e ''AZURE_TENANT=$(tid)'' -v ''$(Build.SourcesDirectory)/playbooks:/ansible/playbooks''  moimhossain/ansible:latest /ansible/playbooks/playbook.yml'
+  displayName: Ansible
+
