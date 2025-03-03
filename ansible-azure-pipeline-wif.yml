@@ -1,0 +1,26 @@
+trigger:
+- main  # Adjust based on your branch
+
+pool:
+  vmImage: 'ubuntu-latest'  # Or use a self-hosted agent
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+
+- script: |
+    python -m pip install --upgrade pip
+    pip install ansible[azure]
+  displayName: 'Install Ansible'
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'VS-Subscription'  # Service connection with Workload Identity Federation
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      echo "Logging in using Workload Identity Federation..."
+      az login --identity
+      ansible-playbook ./playbooks/playbook.yml
+  displayName: 'Run Ansible Playbook'
