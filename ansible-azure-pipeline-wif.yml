@@ -8,7 +8,7 @@ jobs:
     vmImage: ubuntu-latest  # Uses a Microsoft-hosted agent
 
   container:
-    image: ansible/ansible-runner:latest
+    image: demisto/ansible-runner:1.0.0.2568459
     options: --user root  # Ensure we can install dependencies if needed
 
   steps:
