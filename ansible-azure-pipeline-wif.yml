@@ -11,8 +11,10 @@ steps:
 
 - script: |
     python -m pip install --upgrade pip
-    pip install ansible[azure]
-  displayName: 'Install Ansible'
+    pip install "ansible[azure]"  # Install Ansible with Azure dependencies
+    pip install azure-cli  # Ensure Azure CLI is installed
+  displayName: 'Install Ansible & Azure SDK'
+
 
 - task: AzureCLI@2
   inputs:
