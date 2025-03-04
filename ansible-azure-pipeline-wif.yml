@@ -21,6 +21,7 @@ steps:
     scriptLocation: 'inlineScript'
     inlineScript: |
       echo "Logging in using Workload Identity Federation..."
-      az login --identity
+      az account show
+      az group create --name myAnsibleRGXX --location eastus
 #      ansible-playbook ./playbooks/playbook.yml
   displayName: 'Run Ansible Playbook'
