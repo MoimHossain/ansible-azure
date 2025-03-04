@@ -16,7 +16,7 @@ steps:
 
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'VS-Subscription'  # Service connection with Workload Identity Federation
+    azureSubscription: 'Visual Studio Enterprise Subscription'  # Service connection with Workload Identity Federation
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
