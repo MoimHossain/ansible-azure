@@ -5,14 +5,14 @@ pool:
   vmImage: 'ubuntu-latest'  # Or use a self-hosted agent
 
 steps:
-#- task: UsePythonVersion@0
-#  inputs:
-#    versionSpec: '3.x'
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
 
-#- script: |
-#    python -m pip install --upgrade pip
-#    pip install ansible[azure]
-#  displayName: 'Install Ansible'
+- script: |
+    python -m pip install --upgrade pip
+    pip install ansible[azure]
+  displayName: 'Install Ansible'
 
 - task: AzureCLI@2
   inputs:
@@ -22,6 +22,6 @@ steps:
     inlineScript: |
       echo "Logging in using Workload Identity Federation..."
       az account show
-      az group create --name myAnsibleRGXX --location eastus
-#      ansible-playbook ./playbooks/playbook.yml
+#      az group create --name myAnsibleRGXX --location eastus
+      ansible-playbook ./playbooks/playbook.yml
   displayName: 'Run Ansible Playbook'
