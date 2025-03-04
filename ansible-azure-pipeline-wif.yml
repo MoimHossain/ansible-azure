@@ -11,7 +11,7 @@ steps:
 
 - script: |
     python -m pip install --upgrade pip
-    pip install "ansible[azure]" "azure-mgmt-resource" "azure-mgmt-network" "azure-mgmt-compute"
+    pip install "ansible[azure]" "azure-mgmt-resource" "azure-mgmt-network" "azure-mgmt-compute" "azure-cli"
   displayName: 'Install Ansible & Azure SDK'
 
 - task: AzureCLI@2
