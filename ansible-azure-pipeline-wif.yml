@@ -20,7 +20,7 @@ jobs:
 
   - task: AzureCLI@2
     inputs:
-      azureSubscription: 'azure-wif-connection'  # Use Workload Identity Federation
+      azureSubscription: 'Visual Studio Enterprise Subscription'  # Use Workload Identity Federation
       scriptType: 'bash'
       scriptLocation: 'inlineScript'
       inlineScript: |
