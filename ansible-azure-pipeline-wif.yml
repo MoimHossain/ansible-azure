@@ -17,3 +17,15 @@ jobs:
   - script: |
       ansible --version      
     displayName: "Run Ansible Playbook"
+
+  - task: AzureCLI@2
+    inputs:
+      azureSubscription: 'azure-wif-connection'  # Use Workload Identity Federation
+      scriptType: 'bash'
+      scriptLocation: 'inlineScript'
+      inlineScript: |
+        az acount show
+        ls
+    displayName: 'Run Ansible Playbook'
+
+    #ansible-playbook create_rg.yml
