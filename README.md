@@ -1,3 +1,6 @@
+test# ansible-azure
+A simple demo of Ansible playbook for Azure
+  
 # Ansible for Azure Pipelines
 
 This repository provides a simple demonstration of using **Ansible** in an **Azure Pipeline** to automate infrastructure provisioning and configuration management.
@@ -74,4 +77,5 @@ Contributions are welcome! Feel free to submit issues or pull requests to enhanc
 
 ### License
 This project is licensed under the MIT License.
+
 
